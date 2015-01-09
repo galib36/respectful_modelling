@@ -1,0 +1,5 @@
+#parameter	p1	p2	distribution	minCI95	maxCI95	equation
+reaction_1_v	1.100000000	0.2400000000	lognormal			
+reaction_2_k2	1.123800000	0.5910000	lognormal			
+reaction_3_k1	0.6000000	0.3100000000	lognormal			
+

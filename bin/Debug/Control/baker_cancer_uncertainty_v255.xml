@@ -1,0 +1,4569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by COPASI version 4.12.65 (Source) on 2014-08-04 11:45 with libSBML version 5.9.0. -->
+<sbml xmlns="http://www.sbml.org/sbml/level2" level="2" version="1">
+  <model metaid="COPASI0" id="Glycolysis_Serine_Glycogen_V1_1" name="Glycolysis_Serine_Glycogen_V1.1">
+    <annotation>
+      <COPASI xmlns="http://www.copasi.org/static/sbml">
+        <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="#COPASI0">
+            <dcterms:created>
+              <rdf:Description>
+                <dcterms:W3CDTF>2013-06-13T11:13:31Z</dcterms:W3CDTF>
+              </rdf:Description>
+            </dcterms:created>
+          </rdf:Description>
+        </rdf:RDF>
+      </COPASI>
+    </annotation>
+    <listOfFunctionDefinitions>
+      <functionDefinition id="Constant_flux__irreversible" name="Constant flux (irreversible)">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> v </ci>
+            </bvar>
+            <ci> v </ci>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_Enolase_1" name="Rate Law for Enolase_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Enolase_Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Enolase_KmP </ci>
+            </bvar>
+            <bvar>
+              <ci> Enolase_KmS </ci>
+            </bvar>
+            <bvar>
+              <ci> Enolase_Vmf </ci>
+            </bvar>
+            <bvar>
+              <ci> species_15 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_16 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> Enolase_Vmf </ci>
+                <apply>
+                  <minus/>
+                  <ci> species_15 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> species_16 </ci>
+                    <ci> Enolase_Keq </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> Enolase_KmS </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_16 </ci>
+                      <ci> Enolase_KmP </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> species_15 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_PGLM_1_1" name="Rate Law for PGLM_1_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Glc1P </ci>
+            </bvar>
+            <bvar>
+              <ci> PGLM_Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> PGLM_Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> PGLM_Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> PGLM_Vmax </ci>
+            </bvar>
+            <bvar>
+              <ci> species_4 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <ci> PGLM_Vmax </ci>
+                  <ci> PGLM_Kms </ci>
+                </apply>
+                <apply>
+                  <minus/>
+                  <ci> species_4 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> Glc1P </ci>
+                    <ci> PGLM_Keq </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> species_4 </ci>
+                  <ci> PGLM_Kms </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> Glc1P </ci>
+                  <ci> PGLM_Kmp </ci>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_GP_1_1" name="Rate Law for GP_1_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> GP_KGlyb </ci>
+            </bvar>
+            <bvar>
+              <ci> GP_KGlyf </ci>
+            </bvar>
+            <bvar>
+              <ci> GP_Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> GP_KiGlc1P </ci>
+            </bvar>
+            <bvar>
+              <ci> GP_KiGlyb </ci>
+            </bvar>
+            <bvar>
+              <ci> GP_KiGlyf </ci>
+            </bvar>
+            <bvar>
+              <ci> GP_Kipi </ci>
+            </bvar>
+            <bvar>
+              <ci> GP_Kpi </ci>
+            </bvar>
+            <bvar>
+              <ci> GP_Vmaxf </ci>
+            </bvar>
+            <bvar>
+              <ci> Glc1P </ci>
+            </bvar>
+            <bvar>
+              <ci> Glycogen_n </ci>
+            </bvar>
+            <bvar>
+              <ci> species_13 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_26 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> GP_Vmaxf </ci>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> species_26 </ci>
+                      <ci> species_13 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> GP_KiGlyf </ci>
+                      <ci> GP_Kpi </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> GP_Vmaxf </ci>
+                      <ci> GP_KGlyb </ci>
+                      <ci> GP_KiGlc1P </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> GP_KiGlyf </ci>
+                      <ci> GP_Kpi </ci>
+                      <ci> GP_Keq </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> Glycogen_n </ci>
+                      <ci> Glc1P </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> GP_KGlyb </ci>
+                      <ci> GP_KiGlc1P </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> species_26 </ci>
+                  <ci> GP_KiGlyf </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_13 </ci>
+                  <ci> GP_Kipi </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> Glycogen_n </ci>
+                  <ci> GP_KiGlyb </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> Glc1P </ci>
+                  <ci> GP_KiGlc1P </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> species_26 </ci>
+                    <ci> species_13 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> GP_KGlyf </ci>
+                    <ci> GP_Kipi </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> Glycogen_n </ci>
+                    <ci> Glc1P </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> GP_KGlyb </ci>
+                    <ci> GP_KiGlc1P </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_MPM_1" name="Rate Law for MPM_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> K </ci>
+            </bvar>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> species_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_17 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_3 </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> K </ci>
+              <ci> species_17 </ci>
+              <apply>
+                <power/>
+                <ci> species_3 </ci>
+                <cn> 13 </cn>
+              </apply>
+              <apply>
+                <power/>
+                <ci> species_3 </ci>
+                <cn> 13 </cn>
+              </apply>
+              <apply>
+                <minus/>
+                <cn> 1 </cn>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <power/>
+                      <ci> species_1 </ci>
+                      <cn> 13 </cn>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> species_17 </ci>
+                      <apply>
+                        <power/>
+                        <ci> species_3 </ci>
+                        <cn> 13 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> species_3 </ci>
+                        <cn> 13 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> Keq </ci>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_HPI_1" name="Rate Law for HPI_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> HPI_Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> HPI_Ki1 </ci>
+            </bvar>
+            <bvar>
+              <ci> HPI_Ki2 </ci>
+            </bvar>
+            <bvar>
+              <ci> HPI_Ki3 </ci>
+            </bvar>
+            <bvar>
+              <ci> HPI_Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> HPI_Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> HPI_Vmf </ci>
+            </bvar>
+            <bvar>
+              <ci> species_22 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_23 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_4 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_5 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_6 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> HPI_Vmf </ci>
+                <apply>
+                  <divide/>
+                  <ci> species_4 </ci>
+                  <ci> HPI_Kms </ci>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> species_5 </ci>
+                    <apply>
+                      <times/>
+                      <ci> HPI_Keq </ci>
+                      <ci> species_4 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> species_4 </ci>
+                  <ci> HPI_Kms </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_5 </ci>
+                  <ci> HPI_Kmp </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_22 </ci>
+                  <ci> HPI_Ki1 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_23 </ci>
+                  <ci> HPI_Ki2 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_6 </ci>
+                  <ci> HPI_Ki3 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="PSA_rate_law_1" name="PSA rate law_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> KcatC </ci>
+            </bvar>
+            <bvar>
+              <ci> KmP </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> SerC </ci>
+            </bvar>
+            <bvar>
+              <ci> species_19 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_21 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> SerC </ci>
+                <ci> KcatC </ci>
+                <apply>
+                  <divide/>
+                  <ci> species_19 </ci>
+                  <ci> Kms </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> species_19 </ci>
+                  <ci> Kms </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_21 </ci>
+                  <ci> KmP </ci>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_Hexokinase_1" name="Rate Law for Hexokinase_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Hexokinase_KiGlc6P </ci>
+            </bvar>
+            <bvar>
+              <ci> Hexokinase_KmATP </ci>
+            </bvar>
+            <bvar>
+              <ci> Hexokinase_KmGlucose </ci>
+            </bvar>
+            <bvar>
+              <ci> Hexokinase_Vmf </ci>
+            </bvar>
+            <bvar>
+              <ci> species_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_4 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> Hexokinase_Vmf </ci>
+                <apply>
+                  <divide/>
+                  <ci> species_2 </ci>
+                  <ci> Hexokinase_KmGlucose </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_1 </ci>
+                  <ci> Hexokinase_KmATP </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_4 </ci>
+                      <ci> Hexokinase_KiGlc6P </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_2 </ci>
+                      <ci> Hexokinase_KmGlucose </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_1 </ci>
+                  <ci> Hexokinase_KmATP </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <divide/>
+                    <ci> species_2 </ci>
+                    <ci> Hexokinase_KmGlucose </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> species_1 </ci>
+                    <ci> Hexokinase_KmATP </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_Aldolase_1" name="Rate Law for Aldolase_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Aldolase_Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Aldolase_Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Aldolase_Kmq </ci>
+            </bvar>
+            <bvar>
+              <ci> Aldolase_Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> Aldolase_Vmf </ci>
+            </bvar>
+            <bvar>
+              <ci> species_6 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_8 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_9 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> Aldolase_Vmf </ci>
+                <apply>
+                  <divide/>
+                  <ci> species_6 </ci>
+                  <ci> Aldolase_Kms </ci>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> species_9 </ci>
+                      <ci> species_8 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> Aldolase_Keq </ci>
+                      <ci> species_6 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> species_6 </ci>
+                  <ci> Aldolase_Kms </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_9 </ci>
+                  <ci> Aldolase_Kmp </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_8 </ci>
+                  <ci> Aldolase_Kmq </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> species_9 </ci>
+                    <ci> species_8 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> Aldolase_Kmp </ci>
+                    <ci> Aldolase_Kmq </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="PSP_rate_law_1" name="PSP rate law_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> KcatB </ci>
+            </bvar>
+            <bvar>
+              <ci> KmP </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> SerB </ci>
+            </bvar>
+            <bvar>
+              <ci> species_20 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_21 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> SerB </ci>
+                <ci> KcatB </ci>
+                <apply>
+                  <divide/>
+                  <ci> species_21 </ci>
+                  <ci> Kms </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> species_21 </ci>
+                  <ci> Kms </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_20 </ci>
+                  <ci> KmP </ci>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_PGK_1" name="Rate Law for PGK_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> PGK_Ka </ci>
+            </bvar>
+            <bvar>
+              <ci> PGK_Kb </ci>
+            </bvar>
+            <bvar>
+              <ci> PGK_Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> PGK_Kp </ci>
+            </bvar>
+            <bvar>
+              <ci> PGK_Kq </ci>
+            </bvar>
+            <bvar>
+              <ci> PGK_Vmf </ci>
+            </bvar>
+            <bvar>
+              <ci> species_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_10 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_14 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_3 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> PGK_Vmf </ci>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> species_10 </ci>
+                    <ci> species_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> PGK_Ka </ci>
+                    <ci> PGK_Kb </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> species_14 </ci>
+                      <ci> species_1 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> PGK_Keq </ci>
+                      <ci> species_10 </ci>
+                      <ci> species_3 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> species_10 </ci>
+                  <ci> PGK_Ka </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_3 </ci>
+                  <ci> PGK_Kb </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> species_10 </ci>
+                    <ci> species_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> PGK_Ka </ci>
+                    <ci> PGK_Kb </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_14 </ci>
+                  <ci> PGK_Kp </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_1 </ci>
+                  <ci> PGK_Kq </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> species_14 </ci>
+                    <ci> species_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> PGK_Kp </ci>
+                    <ci> PGK_Kq </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_PGAM_1" name="Rate Law for PGAM_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> PGAM_Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> PGAM_KmP </ci>
+            </bvar>
+            <bvar>
+              <ci> PGAM_KmS </ci>
+            </bvar>
+            <bvar>
+              <ci> PGAM_Vmf </ci>
+            </bvar>
+            <bvar>
+              <ci> species_14 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_15 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> PGAM_Vmf </ci>
+                <apply>
+                  <minus/>
+                  <ci> species_14 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> species_15 </ci>
+                    <ci> PGAM_Keq </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> PGAM_KmS </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_15 </ci>
+                      <ci> PGAM_KmP </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> species_14 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Reversible_Michaelis_Menten_with_Haldane_Substitution_1" name="Reversible Michaelis-Menten with Haldane Substitution_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> KmP </ci>
+            </bvar>
+            <bvar>
+              <ci> KmS </ci>
+            </bvar>
+            <bvar>
+              <ci> Vmf </ci>
+            </bvar>
+            <bvar>
+              <ci> species_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_27 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> Vmf </ci>
+                <apply>
+                  <minus/>
+                  <ci> species_27 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> species_2 </ci>
+                    <ci> Keq </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> KmS </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_2 </ci>
+                      <ci> KmP </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> species_27 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_GAPDH_1" name="Rate Law for GAPDH_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> GAPDH_KA </ci>
+            </bvar>
+            <bvar>
+              <ci> GAPDH_KB </ci>
+            </bvar>
+            <bvar>
+              <ci> GAPDH_KC </ci>
+            </bvar>
+            <bvar>
+              <ci> GAPDH_KP </ci>
+            </bvar>
+            <bvar>
+              <ci> GAPDH_KQ </ci>
+            </bvar>
+            <bvar>
+              <ci> GAPDH_Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> GAPDH_Vmf </ci>
+            </bvar>
+            <bvar>
+              <ci> species_10 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_11 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_12 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_13 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_9 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> GAPDH_Vmf </ci>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> species_11 </ci>
+                    <ci> species_9 </ci>
+                    <ci> species_13 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> GAPDH_KA </ci>
+                    <ci> GAPDH_KB </ci>
+                    <ci> GAPDH_KC </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> species_10 </ci>
+                      <ci> species_12 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> GAPDH_Keq </ci>
+                      <ci> species_11 </ci>
+                      <ci> species_9 </ci>
+                      <ci> species_13 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> species_11 </ci>
+                  <ci> GAPDH_KA </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> species_11 </ci>
+                    <ci> species_9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> GAPDH_KA </ci>
+                    <ci> GAPDH_KB </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> species_11 </ci>
+                    <ci> species_9 </ci>
+                    <ci> species_13 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> GAPDH_KA </ci>
+                    <ci> GAPDH_KB </ci>
+                    <ci> GAPDH_KC </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> species_10 </ci>
+                    <ci> species_12 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> GAPDH_KP </ci>
+                    <ci> GAPDH_KQ </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_12 </ci>
+                  <ci> GAPDH_KQ </ci>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI74" id="PDH_modified_rate_law_1_1" name="PDH_modified_rate_law_1_1">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI74">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-07-30T13:58:40Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> PDH_KcatA </ci>
+            </bvar>
+            <bvar>
+              <ci> PDH_KiSER </ci>
+            </bvar>
+            <bvar>
+              <ci> PDH_KmP </ci>
+            </bvar>
+            <bvar>
+              <ci> PDH_Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> PDH_SerA </ci>
+            </bvar>
+            <bvar>
+              <ci> species_14 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_19 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_20 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> PDH_SerA </ci>
+                  <ci> PDH_KcatA </ci>
+                  <apply>
+                    <divide/>
+                    <ci> species_14 </ci>
+                    <ci> PDH_Kms </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> species_14 </ci>
+                    <ci> PDH_Kms </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> species_19 </ci>
+                    <ci> PDH_KmP </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> species_20 </ci>
+                  <ci> PDH_KiSER </ci>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_GlycogenSyn_1" name="Rate Law for GlycogenSyn_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> GS </ci>
+            </bvar>
+            <bvar>
+              <ci> Kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> KprATP </ci>
+            </bvar>
+            <bvar>
+              <ci> KptATP </ci>
+            </bvar>
+            <bvar>
+              <ci> KrATP </ci>
+            </bvar>
+            <bvar>
+              <ci> KrGlc6P </ci>
+            </bvar>
+            <bvar>
+              <ci> KtATP </ci>
+            </bvar>
+            <bvar>
+              <ci> KtGlc6P </ci>
+            </bvar>
+            <bvar>
+              <ci> Kudpg </ci>
+            </bvar>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> UDPG </ci>
+            </bvar>
+            <bvar>
+              <ci> n </ci>
+            </bvar>
+            <bvar>
+              <ci> species_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_4 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> Kcat </ci>
+                <ci> GS </ci>
+                <ci> n </ci>
+                <apply>
+                  <divide/>
+                  <ci> UDPG </ci>
+                  <ci> Kudpg </ci>
+                </apply>
+                <apply>
+                  <power/>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> UDPG </ci>
+                      <ci> Kudpg </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_1 </ci>
+                      <ci> KprATP </ci>
+                    </apply>
+                  </apply>
+                  <cn> 3 </cn>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <power/>
+                    <apply>
+                      <plus/>
+                      <cn> 1 </cn>
+                      <apply>
+                        <divide/>
+                        <ci> UDPG </ci>
+                        <ci> Kudpg </ci>
+                      </apply>
+                      <apply>
+                        <divide/>
+                        <ci> species_1 </ci>
+                        <ci> KptATP </ci>
+                      </apply>
+                    </apply>
+                    <cn> 4 </cn>
+                  </apply>
+                  <ci> L </ci>
+                  <apply>
+                    <power/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <plus/>
+                        <cn> 1 </cn>
+                        <apply>
+                          <divide/>
+                          <ci> species_4 </ci>
+                          <ci> KtGlc6P </ci>
+                        </apply>
+                        <apply>
+                          <divide/>
+                          <ci> species_1 </ci>
+                          <ci> KtATP </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <cn> 1 </cn>
+                        <apply>
+                          <divide/>
+                          <ci> species_4 </ci>
+                          <ci> KrGlc6P </ci>
+                        </apply>
+                        <apply>
+                          <divide/>
+                          <ci> species_1 </ci>
+                          <ci> KrATP </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <cn> 4 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <power/>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> UDPG </ci>
+                      <ci> Kudpg </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_1 </ci>
+                      <ci> KprATP </ci>
+                    </apply>
+                  </apply>
+                  <cn> 4 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="SHMT_rate_law_1" name="SHMT rate law_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> KcatD </ci>
+            </bvar>
+            <bvar>
+              <ci> KmP </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> SerD </ci>
+            </bvar>
+            <bvar>
+              <ci> species_20 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_25 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> SerD </ci>
+                <ci> KcatD </ci>
+                <apply>
+                  <divide/>
+                  <ci> species_20 </ci>
+                  <ci> Kms </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> species_20 </ci>
+                  <ci> Kms </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_25 </ci>
+                  <ci> KmP </ci>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_law_for_UPP_1" name="Rate law for UPP_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Glc1P </ci>
+            </bvar>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> KmA </ci>
+            </bvar>
+            <bvar>
+              <ci> KmB </ci>
+            </bvar>
+            <bvar>
+              <ci> KmP </ci>
+            </bvar>
+            <bvar>
+              <ci> KmQ </ci>
+            </bvar>
+            <bvar>
+              <ci> PPi </ci>
+            </bvar>
+            <bvar>
+              <ci> UDPG </ci>
+            </bvar>
+            <bvar>
+              <ci> UTP </ci>
+            </bvar>
+            <bvar>
+              <ci> Vmax </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <ci> Vmax </ci>
+                  <apply>
+                    <times/>
+                    <ci> KmA </ci>
+                    <ci> KmB </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <times/>
+                    <ci> UTP </ci>
+                    <ci> Glc1P </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> UDPG </ci>
+                      <ci> PPi </ci>
+                    </apply>
+                    <ci> Keq </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <apply>
+                  <plus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> UTP </ci>
+                    <ci> KmA </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> PPi </ci>
+                    <ci> KmQ </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> UDPG </ci>
+                    <ci> KmP </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> Glc1P </ci>
+                    <ci> KmB </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_MCT_1" name="Rate Law for MCT_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> MCT_Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> MCT_KmP </ci>
+            </bvar>
+            <bvar>
+              <ci> MCT_KmS </ci>
+            </bvar>
+            <bvar>
+              <ci> MCT_Vmf </ci>
+            </bvar>
+            <bvar>
+              <ci> species_18 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_28 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> MCT_Vmf </ci>
+                <apply>
+                  <minus/>
+                  <ci> species_18 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> species_28 </ci>
+                    <ci> MCT_Keq </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> MCT_KmS </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_28 </ci>
+                      <ci> MCT_KmP </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> species_18 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_PPASE_1" name="Rate Law for PPASE_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> PPASE_Km </ci>
+            </bvar>
+            <bvar>
+              <ci> PPASE_V </ci>
+            </bvar>
+            <bvar>
+              <ci> PPi </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> PPASE_V </ci>
+                <ci> PPi </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> PPASE_Km </ci>
+                <ci> PPi </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_LDH_1" name="Rate Law for LDH_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> LDH_Ka </ci>
+            </bvar>
+            <bvar>
+              <ci> LDH_Kb </ci>
+            </bvar>
+            <bvar>
+              <ci> LDH_Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> LDH_Kp </ci>
+            </bvar>
+            <bvar>
+              <ci> LDH_Kq </ci>
+            </bvar>
+            <bvar>
+              <ci> LDH_Vmf </ci>
+            </bvar>
+            <bvar>
+              <ci> species_11 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_12 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_17 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_18 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> LDH_Vmf </ci>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> species_17 </ci>
+                    <ci> species_12 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> LDH_Ka </ci>
+                    <ci> LDH_Kb </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> species_18 </ci>
+                      <ci> species_11 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> LDH_Keq </ci>
+                      <ci> species_17 </ci>
+                      <ci> species_12 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> species_17 </ci>
+                  <ci> LDH_Ka </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_12 </ci>
+                  <ci> LDH_Kb </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> species_17 </ci>
+                    <ci> species_12 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> LDH_Ka </ci>
+                    <ci> LDH_Kb </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_18 </ci>
+                  <ci> LDH_Kp </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> species_11 </ci>
+                  <ci> LDH_Kq </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> species_18 </ci>
+                    <ci> species_11 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> LDH_Kp </ci>
+                    <ci> LDH_Kq </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_TPI_1" name="Rate Law for TPI_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> TPI_Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> TPI_KmP </ci>
+            </bvar>
+            <bvar>
+              <ci> TPI_KmS </ci>
+            </bvar>
+            <bvar>
+              <ci> TPI_Vmf </ci>
+            </bvar>
+            <bvar>
+              <ci> species_8 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_9 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> TPI_Vmf </ci>
+                <apply>
+                  <minus/>
+                  <ci> species_8 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> species_9 </ci>
+                    <ci> TPI_Keq </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> TPI_KmS </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_9 </ci>
+                      <ci> TPI_KmP </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> species_8 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI75" id="Modified_PFK_rate_law_with_Allosteric_1" name="Modified_PFK_rate_law_with_Allosteric_1">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI75">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-07-31T10:55:31Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> KADP </ci>
+            </bvar>
+            <bvar>
+              <ci> KFru16BP </ci>
+            </bvar>
+            <bvar>
+              <ci> KaFru26BP </ci>
+            </bvar>
+            <bvar>
+              <ci> KiATP </ci>
+            </bvar>
+            <bvar>
+              <ci> KiCIT </ci>
+            </bvar>
+            <bvar>
+              <ci> KmATP </ci>
+            </bvar>
+            <bvar>
+              <ci> KmFru6P </ci>
+            </bvar>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> Vm </ci>
+            </bvar>
+            <bvar>
+              <ci> alpha </ci>
+            </bvar>
+            <bvar>
+              <ci> beta </ci>
+            </bvar>
+            <bvar>
+              <ci> keq </ci>
+            </bvar>
+            <bvar>
+              <ci> species_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_24 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_3 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_5 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_6 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_7 </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> Vm </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <divide/>
+                  <ci> species_1 </ci>
+                  <ci> KmATP </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> species_1 </ci>
+                    <ci> KmATP </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> beta </ci>
+                      <ci> species_7 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> alpha </ci>
+                      <ci> KaFru26BP </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> species_7 </ci>
+                    <apply>
+                      <times/>
+                      <ci> alpha </ci>
+                      <ci> KaFru26BP </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> species_5 </ci>
+                        <apply>
+                          <plus/>
+                          <cn> 1 </cn>
+                          <apply>
+                            <divide/>
+                            <ci> species_7 </ci>
+                            <apply>
+                              <times/>
+                              <ci> alpha </ci>
+                              <ci> KaFru26BP </ci>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> KmFru6P </ci>
+                        <apply>
+                          <plus/>
+                          <cn> 1 </cn>
+                          <apply>
+                            <divide/>
+                            <ci> species_7 </ci>
+                            <ci> KaFru26BP </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <apply>
+                        <plus/>
+                        <cn> 1 </cn>
+                        <apply>
+                          <divide/>
+                          <apply>
+                            <times/>
+                            <ci> species_5 </ci>
+                            <apply>
+                              <plus/>
+                              <cn> 1 </cn>
+                              <apply>
+                                <divide/>
+                                <ci> species_7 </ci>
+                                <apply>
+                                  <times/>
+                                  <ci> alpha </ci>
+                                  <ci> KaFru26BP </ci>
+                                </apply>
+                              </apply>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <ci> KmFru6P </ci>
+                            <apply>
+                              <plus/>
+                              <cn> 1 </cn>
+                              <apply>
+                                <divide/>
+                                <ci> species_7 </ci>
+                                <ci> KaFru26BP </ci>
+                              </apply>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <cn> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> L </ci>
+                        <apply>
+                          <power/>
+                          <apply>
+                            <plus/>
+                            <cn> 1 </cn>
+                            <apply>
+                              <divide/>
+                              <ci> species_24 </ci>
+                              <ci> KiCIT </ci>
+                            </apply>
+                          </apply>
+                          <cn> 4 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <apply>
+                            <plus/>
+                            <cn> 1 </cn>
+                            <apply>
+                              <divide/>
+                              <ci> species_1 </ci>
+                              <ci> KiATP </ci>
+                            </apply>
+                          </apply>
+                          <cn> 4 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <apply>
+                          <plus/>
+                          <cn> 1 </cn>
+                          <apply>
+                            <divide/>
+                            <ci> species_7 </ci>
+                            <ci> KaFru26BP </ci>
+                          </apply>
+                        </apply>
+                        <cn> 4 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <apply>
+                        <plus/>
+                        <cn> 1 </cn>
+                        <apply>
+                          <divide/>
+                          <apply>
+                            <times/>
+                            <ci> species_5 </ci>
+                            <apply>
+                              <plus/>
+                              <cn> 1 </cn>
+                              <apply>
+                                <divide/>
+                                <ci> species_7 </ci>
+                                <apply>
+                                  <times/>
+                                  <ci> alpha </ci>
+                                  <ci> KaFru26BP </ci>
+                                </apply>
+                              </apply>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <ci> KmFru6P </ci>
+                            <apply>
+                              <plus/>
+                              <cn> 1 </cn>
+                              <apply>
+                                <divide/>
+                                <ci> species_7 </ci>
+                                <ci> KaFru26BP </ci>
+                              </apply>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <cn> 4 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <divide/>
+                      <ci> species_3 </ci>
+                      <ci> KADP </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_6 </ci>
+                      <apply>
+                        <times/>
+                        <ci> KFru16BP </ci>
+                        <ci> keq </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_3 </ci>
+                      <ci> KADP </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_6 </ci>
+                      <ci> KFru16BP </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <divide/>
+                        <ci> species_3 </ci>
+                        <ci> KADP </ci>
+                      </apply>
+                      <apply>
+                        <divide/>
+                        <ci> species_6 </ci>
+                        <ci> KFru16BP </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Rate_Law_for_NDK_1" name="Rate Law for NDK_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> NDK_Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> NDK_KmADP </ci>
+            </bvar>
+            <bvar>
+              <ci> NDK_KmATP </ci>
+            </bvar>
+            <bvar>
+              <ci> NDK_KmUDP </ci>
+            </bvar>
+            <bvar>
+              <ci> NDK_KmUTP </ci>
+            </bvar>
+            <bvar>
+              <ci> NDK_Vmax </ci>
+            </bvar>
+            <bvar>
+              <ci> UDP </ci>
+            </bvar>
+            <bvar>
+              <ci> UTP </ci>
+            </bvar>
+            <bvar>
+              <ci> species_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_3 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <ci> NDK_Vmax </ci>
+                  <apply>
+                    <times/>
+                    <ci> NDK_KmATP </ci>
+                    <ci> NDK_KmUDP </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <times/>
+                    <ci> species_1 </ci>
+                    <ci> species_3 </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> species_3 </ci>
+                      <ci> UTP </ci>
+                    </apply>
+                    <ci> NDK_Keq </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <plus/>
+                      <cn> 1 </cn>
+                      <apply>
+                        <divide/>
+                        <ci> species_1 </ci>
+                        <ci> NDK_KmATP </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <cn> 1 </cn>
+                      <apply>
+                        <divide/>
+                        <ci> UDP </ci>
+                        <ci> NDK_KmUDP </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <plus/>
+                      <cn> 1 </cn>
+                      <apply>
+                        <divide/>
+                        <ci> species_3 </ci>
+                        <ci> NDK_KmADP </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <cn> 1 </cn>
+                      <apply>
+                        <divide/>
+                        <ci> UTP </ci>
+                        <ci> NDK_KmUTP </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <cn> 1 </cn>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Modified_PYK_rate_law_1_1_1" name="Modified_PYK_rate_law_1_1_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> KADP </ci>
+            </bvar>
+            <bvar>
+              <ci> KATP </ci>
+            </bvar>
+            <bvar>
+              <ci> KPEP </ci>
+            </bvar>
+            <bvar>
+              <ci> KPYR </ci>
+            </bvar>
+            <bvar>
+              <ci> KaF16BP </ci>
+            </bvar>
+            <bvar>
+              <ci> KaSer </ci>
+            </bvar>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> KiATP </ci>
+            </bvar>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> Vm </ci>
+            </bvar>
+            <bvar>
+              <ci> species_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_16 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_17 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_20 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_3 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_6 </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> Vm </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <divide/>
+                      <ci> species_3 </ci>
+                      <ci> KADP </ci>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <cn> 1 </cn>
+                      <apply>
+                        <divide/>
+                        <ci> species_3 </ci>
+                        <ci> KADP </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <divide/>
+                        <ci> species_16 </ci>
+                        <ci> KPEP </ci>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <apply>
+                          <plus/>
+                          <cn> 1 </cn>
+                          <apply>
+                            <divide/>
+                            <ci> species_16 </ci>
+                            <ci> KPEP </ci>
+                          </apply>
+                        </apply>
+                        <cn> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <ci> L </ci>
+                          <apply>
+                            <power/>
+                            <apply>
+                              <plus/>
+                              <cn> 1 </cn>
+                              <apply>
+                                <divide/>
+                                <ci> species_1 </ci>
+                                <ci> KiATP </ci>
+                              </apply>
+                            </apply>
+                            <cn> 4 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <power/>
+                            <apply>
+                              <plus/>
+                              <cn> 1 </cn>
+                              <apply>
+                                <divide/>
+                                <ci> species_6 </ci>
+                                <ci> KaF16BP </ci>
+                              </apply>
+                            </apply>
+                            <cn> 4 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <apply>
+                              <plus/>
+                              <cn> 1 </cn>
+                              <apply>
+                                <divide/>
+                                <ci> species_20 </ci>
+                                <ci> KaSer </ci>
+                              </apply>
+                            </apply>
+                            <cn> 4 </cn>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <apply>
+                          <plus/>
+                          <cn> 1 </cn>
+                          <apply>
+                            <divide/>
+                            <ci> species_16 </ci>
+                            <ci> KPEP </ci>
+                          </apply>
+                        </apply>
+                        <cn> 4 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> species_1 </ci>
+                      <ci> species_17 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> KATP </ci>
+                      <ci> KPYR </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <divide/>
+                      <ci> species_1 </ci>
+                      <ci> KATP </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_17 </ci>
+                      <ci> KPYR </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> species_1 </ci>
+                        <ci> species_17 </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> KATP </ci>
+                        <ci> KPYR </ci>
+                      </apply>
+                    </apply>
+                    <cn> 1 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="Constant_flux__reversible" name="Constant flux (reversible)">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> v </ci>
+            </bvar>
+            <ci> v </ci>
+          </lambda>
+        </math>
+      </functionDefinition>
+    </listOfFunctionDefinitions>
+    <listOfUnitDefinitions>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="substance" name="substance">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-3" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment metaid="COPASI1" id="compartment_1" name="Cytosol" spatialDimensions="3" size="1" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI1">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-09T15:30:15Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </compartment>
+      <compartment metaid="COPASI2" id="compartment_2" name="Exterior" spatialDimensions="3" size="1" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI2">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-09T15:30:16Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species metaid="COPASI3" id="species_1" name="ATP" compartment="compartment_1" initialConcentration="7.9" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI3">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-28T11:41:08Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI4" id="species_2" name="Glucose" compartment="compartment_1" initialConcentration="0.0001" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI4">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-02T14:44:56Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI5" id="species_3" name="ADP" compartment="compartment_1" initialConcentration="2.7" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI5">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-28T12:04:29Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI6" id="species_4" name="Glc6P" compartment="compartment_1" initialConcentration="1.4" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI6">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-01T14:42:13Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI7" id="species_5" name="Fru6P" compartment="compartment_1" initialConcentration="0.5" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI7">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-01T14:42:12Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI8" id="species_6" name="Fru1,6BP" compartment="compartment_1" initialConcentration="0.29" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI8">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-10T10:00:44Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI9" id="species_7" name="Fru2,6BP" compartment="compartment_1" initialConcentration="0.0043" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI9">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-10T10:01:17Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI10" id="species_8" name="DHAP" compartment="compartment_1" initialConcentration="0.93" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI10">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-10T10:11:34Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI11" id="species_9" name="Gly3P" compartment="compartment_1" initialConcentration="0.9" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI11">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-01T14:40:21Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI12" id="species_10" name="1,3BPG" compartment="compartment_1" initialConcentration="0.001" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI12">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-28T12:01:21Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI13" id="species_11" name="NAD" compartment="compartment_1" initialConcentration="1.34" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI13">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-28T12:25:30Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI14" id="species_12" name="NADH" compartment="compartment_1" initialConcentration="0.05" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI14">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-28T12:25:40Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI15" id="species_13" name="Pi" compartment="compartment_1" initialConcentration="4" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI15">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-02T14:47:06Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI16" id="species_14" name="3PG" compartment="compartment_1" initialConcentration="0.001" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI16">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-01T14:40:06Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI17" id="species_15" name="2PG" compartment="compartment_1" initialConcentration="0.001" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI17">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-10T10:11:13Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI18" id="species_16" name="PEP" compartment="compartment_1" initialConcentration="0.32" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI18">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-25T12:16:57Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI19" id="species_17" name="PYR" compartment="compartment_1" initialConcentration="8.5" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI19">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-25T12:50:30Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI20" id="species_18" name="LACin" compartment="compartment_1" initialConcentration="33" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI20">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-28T12:25:21Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI21" id="species_19" name="PHP" compartment="compartment_1" initialConcentration="0.6" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI21">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-25T11:39:25Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI22" id="species_20" name="SER" compartment="compartment_1" initialConcentration="4.9" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI22">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-24T15:24:11Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI23" id="species_21" name="PSER" compartment="compartment_1" initialConcentration="0.09" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI23">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-08-23T15:50:32Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI24" id="species_22" name="Ery4P" compartment="compartment_1" initialConcentration="0.016" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI24">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-10T10:12:54Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI25" id="species_23" name="6PG" compartment="compartment_1" initialConcentration="0.39" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI25">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-24T15:23:40Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI26" id="species_24" name="CIT" compartment="compartment_1" initialConcentration="1.7" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI26">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-26T09:44:08Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI27" id="species_25" name="GLY" compartment="compartment_1" initialConcentration="16.58" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI27">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-24T15:24:23Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI28" id="species_26" name="Glycogen_n+1" compartment="compartment_1" initialConcentration="135" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI28">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-10T10:16:06Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI29" id="AMP" name="AMP" compartment="compartment_1" initialConcentration="0.4" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI29">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-28T11:58:15Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI30" id="Xy5P" name="Xy5P" compartment="compartment_1" initialConcentration="0.016" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI30">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-27T09:32:45Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI31" id="Glc1P" name="Glc1P" compartment="compartment_1" initialConcentration="0.0589" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI31">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-27T09:36:44Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI32" id="UDPG" name="UDPG" compartment="compartment_1" initialConcentration="0.043" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI32">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-27T09:51:33Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI33" id="UTP" name="UTP" compartment="compartment_1" initialConcentration="0.13" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI33">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-27T09:51:49Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI34" id="PPi" name="PPi" compartment="compartment_1" initialConcentration="0.01" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI34">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-27T09:52:07Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI35" id="UDP" name="UDP" compartment="compartment_1" initialConcentration="0.1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI35">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-27T10:20:42Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI36" id="Glycogen_n" name="Glycogen_n" compartment="compartment_1" initialConcentration="135" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI36">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-31T10:20:41Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI37" id="species_27" name="GlucoseOut" compartment="compartment_2" initialConcentration="20" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI37">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-28T11:41:27Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI38" id="species_28" name="LACout" compartment="compartment_2" initialConcentration="1e-05" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI38">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-25T15:06:48Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI39" id="SerineOut" name="SerineOut" compartment="compartment_2" initialConcentration="1e-05" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI39">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-27T09:24:13Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI40" id="GlycineOut" name="GlycineOut" compartment="compartment_2" initialConcentration="1e-05" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI40">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-26T16:29:01Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction metaid="COPASI41" id="reaction_1" name="GLUT" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI41">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-13T11:44:48Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_27" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <ci> Reversible_Michaelis_Menten_with_Haldane_Substitution_1 </ci>
+              <ci> Keq </ci>
+              <ci> KmP </ci>
+              <ci> KmS </ci>
+              <ci> Vmf </ci>
+              <ci> species_2 </ci>
+              <ci> species_27 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="1.01804"/>
+            <parameter id="KmP" name="KmP" value="7.84308"/>
+            <parameter id="KmS" name="KmS" value="17.0937"/>
+            <parameter id="Vmf" name="Vmf" value="0.0218488"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI42" id="reaction_2" name="Hexokinase" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI42">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-13T11:54:26Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_2" stoichiometry="1"/>
+          <speciesReference species="species_1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_4" stoichiometry="1"/>
+          <speciesReference species="species_3" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_4"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_Law_for_Hexokinase_1 </ci>
+                <ci> Hexokinase_KiGlc6P </ci>
+                <ci> Hexokinase_KmATP </ci>
+                <ci> Hexokinase_KmGlucose </ci>
+                <ci> Hexokinase_Vmf </ci>
+                <ci> species_1 </ci>
+                <ci> species_2 </ci>
+                <ci> species_4 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Hexokinase_KiGlc6P" name="Hexokinase_KiGlc6P" value="0.255358"/>
+            <parameter id="Hexokinase_KmATP" name="Hexokinase_KmATP" value="0.751189"/>
+            <parameter id="Hexokinase_KmGlucose" name="Hexokinase_KmGlucose" value="0.374863"/>
+            <parameter id="Hexokinase_Vmf" name="Hexokinase_Vmf" value="0.0210809"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI43" id="reaction_3" name="HPI" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI43">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-13T12:28:22Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_4" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_5" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_22"/>
+          <modifierSpeciesReference species="species_23"/>
+          <modifierSpeciesReference species="species_6"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_Law_for_HPI_1 </ci>
+                <ci> HPI_Keq </ci>
+                <ci> HPI_Ki1 </ci>
+                <ci> HPI_Ki2 </ci>
+                <ci> HPI_Ki3 </ci>
+                <ci> HPI_Kmp </ci>
+                <ci> HPI_Kms </ci>
+                <ci> HPI_Vmf </ci>
+                <ci> species_22 </ci>
+                <ci> species_23 </ci>
+                <ci> species_4 </ci>
+                <ci> species_5 </ci>
+                <ci> species_6 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="HPI_Keq" name="HPI_Keq" value="0.394751"/>
+            <parameter id="HPI_Ki1" name="HPI_Ki1" value="0.000877701"/>
+            <parameter id="HPI_Ki2" name="HPI_Ki2" value="0.0167104"/>
+            <parameter id="HPI_Ki3" name="HPI_Ki3" value="0.0745696"/>
+            <parameter id="HPI_Kmp" name="HPI_Kmp" value="0.0781049"/>
+            <parameter id="HPI_Kms" name="HPI_Kms" value="0.409821"/>
+            <parameter id="HPI_Vmf" name="HPI_Vmf" value="0.166258"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI44" id="reaction_4" name="PFK" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI44">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-13T14:37:30Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_5" stoichiometry="1"/>
+          <speciesReference species="species_1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_6" stoichiometry="1"/>
+          <speciesReference species="species_3" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_7"/>
+          <modifierSpeciesReference species="species_24"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Modified_PFK_rate_law_with_Allosteric_1 </ci>
+                <ci> KADP </ci>
+                <ci> KFru16BP </ci>
+                <ci> KaFru26BP </ci>
+                <ci> KiATP </ci>
+                <ci> KiCIT </ci>
+                <ci> KmATP </ci>
+                <ci> KmFru6P </ci>
+                <ci> L </ci>
+                <ci> Vm </ci>
+                <ci> alpha </ci>
+                <ci> beta </ci>
+                <ci> keq </ci>
+                <ci> species_1 </ci>
+                <ci> species_24 </ci>
+                <ci> species_3 </ci>
+                <ci> species_5 </ci>
+                <ci> species_6 </ci>
+                <ci> species_7 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="KADP" name="KADP" value="0.626272"/>
+            <parameter id="KFru16BP" name="KFru16BP" value="12.755"/>
+            <parameter id="KaFru26BP" name="KaFru26BP" value="0.00117088"/>
+            <parameter id="KiATP" name="KiATP" value="2.10166"/>
+            <parameter id="KiCIT" name="KiCIT" value="8.13718"/>
+            <parameter id="KmATP" name="KmATP" value="0.0299471"/>
+            <parameter id="KmFru6P" name="KmFru6P" value="0.961319"/>
+            <parameter id="L" name="L" value="6.28109"/>
+            <parameter id="Vm" name="Vm" value="0.00604584"/>
+            <parameter id="alpha" name="alpha" value="1.17119"/>
+            <parameter id="beta" name="beta" value="1.02763"/>
+            <parameter id="keq" name="keq" value="435.538"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI45" id="reaction_5" name="Aldolase" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI45">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-13T15:05:34Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_6" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_9" stoichiometry="1"/>
+          <speciesReference species="species_8" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_Law_for_Aldolase_1 </ci>
+                <ci> Aldolase_Keq </ci>
+                <ci> Aldolase_Kmp </ci>
+                <ci> Aldolase_Kmq </ci>
+                <ci> Aldolase_Kms </ci>
+                <ci> Aldolase_Vmf </ci>
+                <ci> species_6 </ci>
+                <ci> species_8 </ci>
+                <ci> species_9 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Aldolase_Keq" name="Aldolase_Keq" value="0.0597086"/>
+            <parameter id="Aldolase_Kmp" name="Aldolase_Kmp" value="0.563476"/>
+            <parameter id="Aldolase_Kmq" name="Aldolase_Kmq" value="0.386553"/>
+            <parameter id="Aldolase_Kms" name="Aldolase_Kms" value="0.00266524"/>
+            <parameter id="Aldolase_Vmf" name="Aldolase_Vmf" value="0.26224"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI46" id="reaction_6" name="TPI" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI46">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-14T09:08:35Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_8" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_9" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_Law_for_TPI_1 </ci>
+                <ci> TPI_Keq </ci>
+                <ci> TPI_KmP </ci>
+                <ci> TPI_KmS </ci>
+                <ci> TPI_Vmf </ci>
+                <ci> species_8 </ci>
+                <ci> species_9 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="TPI_Keq" name="TPI_Keq" value="0.0614838"/>
+            <parameter id="TPI_KmP" name="TPI_KmP" value="0.406853"/>
+            <parameter id="TPI_KmS" name="TPI_KmS" value="0.587724"/>
+            <parameter id="TPI_Vmf" name="TPI_Vmf" value="3.1666"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI47" id="reaction_7" name="GAPDH" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI47">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-14T09:23:44Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_11" stoichiometry="1"/>
+          <speciesReference species="species_9" stoichiometry="1"/>
+          <speciesReference species="species_13" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_10" stoichiometry="1"/>
+          <speciesReference species="species_12" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_Law_for_GAPDH_1 </ci>
+                <ci> GAPDH_KA </ci>
+                <ci> GAPDH_KB </ci>
+                <ci> GAPDH_KC </ci>
+                <ci> GAPDH_KP </ci>
+                <ci> GAPDH_KQ </ci>
+                <ci> GAPDH_Keq </ci>
+                <ci> GAPDH_Vmf </ci>
+                <ci> species_10 </ci>
+                <ci> species_11 </ci>
+                <ci> species_12 </ci>
+                <ci> species_13 </ci>
+                <ci> species_9 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="GAPDH_KA" name="GAPDH_KA" value="0.0269729"/>
+            <parameter id="GAPDH_KB" name="GAPDH_KB" value="0.0407696"/>
+            <parameter id="GAPDH_KC" name="GAPDH_KC" value="4.14624"/>
+            <parameter id="GAPDH_KP" name="GAPDH_KP" value="0.0139031"/>
+            <parameter id="GAPDH_KQ" name="GAPDH_KQ" value="0.0102635"/>
+            <parameter id="GAPDH_Keq" name="GAPDH_Keq" value="0.0676156"/>
+            <parameter id="GAPDH_Vmf" name="GAPDH_Vmf" value="2.13493"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI48" id="reaction_8" name="PGK" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI48">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-14T09:43:16Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_10" stoichiometry="1"/>
+          <speciesReference species="species_3" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_14" stoichiometry="1"/>
+          <speciesReference species="species_1" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_Law_for_PGK_1 </ci>
+                <ci> PGK_Ka </ci>
+                <ci> PGK_Kb </ci>
+                <ci> PGK_Keq </ci>
+                <ci> PGK_Kp </ci>
+                <ci> PGK_Kq </ci>
+                <ci> PGK_Vmf </ci>
+                <ci> species_1 </ci>
+                <ci> species_10 </ci>
+                <ci> species_14 </ci>
+                <ci> species_3 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="PGK_Ka" name="PGK_Ka" value="0.000480555"/>
+            <parameter id="PGK_Kb" name="PGK_Kb" value="0.137482"/>
+            <parameter id="PGK_Keq" name="PGK_Keq" value="2206.44"/>
+            <parameter id="PGK_Kp" name="PGK_Kp" value="0.0432136"/>
+            <parameter id="PGK_Kq" name="PGK_Kq" value="0.109508"/>
+            <parameter id="PGK_Vmf" name="PGK_Vmf" value="25.4837"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI49" id="reaction_9" name="PGAM" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI49">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-14T09:51:22Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_14" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_15" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_Law_for_PGAM_1 </ci>
+                <ci> PGAM_Keq </ci>
+                <ci> PGAM_KmP </ci>
+                <ci> PGAM_KmS </ci>
+                <ci> PGAM_Vmf </ci>
+                <ci> species_14 </ci>
+                <ci> species_15 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="PGAM_Keq" name="PGAM_Keq" value="0.188079"/>
+            <parameter id="PGAM_KmP" name="PGAM_KmP" value="0.28255"/>
+            <parameter id="PGAM_KmS" name="PGAM_KmS" value="0.428282"/>
+            <parameter id="PGAM_Vmf" name="PGAM_Vmf" value="0.740425"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI50" id="reaction_10" name="Enolase" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI50">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-14T09:58:03Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_15" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_16" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_Law_for_Enolase_1 </ci>
+                <ci> Enolase_Keq </ci>
+                <ci> Enolase_KmP </ci>
+                <ci> Enolase_KmS </ci>
+                <ci> Enolase_Vmf </ci>
+                <ci> species_15 </ci>
+                <ci> species_16 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Enolase_Keq" name="Enolase_Keq" value="2.73921"/>
+            <parameter id="Enolase_KmP" name="Enolase_KmP" value="0.296466"/>
+            <parameter id="Enolase_KmS" name="Enolase_KmS" value="0.136845"/>
+            <parameter id="Enolase_Vmf" name="Enolase_Vmf" value="0.267519"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI51" id="reaction_11" name="PYK" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI51">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-14T10:21:41Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_16" stoichiometry="1"/>
+          <speciesReference species="species_3" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_17" stoichiometry="1"/>
+          <speciesReference species="species_1" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_6"/>
+          <modifierSpeciesReference species="species_20"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Modified_PYK_rate_law_1_1_1 </ci>
+                <ci> KADP </ci>
+                <ci> KATP </ci>
+                <ci> KPEP </ci>
+                <ci> KPYR </ci>
+                <ci> KaF16BP </ci>
+                <ci> KaSer </ci>
+                <ci> Keq </ci>
+                <ci> KiATP </ci>
+                <ci> L </ci>
+                <ci> Vm </ci>
+                <ci> species_1 </ci>
+                <ci> species_16 </ci>
+                <ci> species_17 </ci>
+                <ci> species_20 </ci>
+                <ci> species_3 </ci>
+                <ci> species_6 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="KADP" name="KADP" value="0.264766"/>
+            <parameter id="KATP" name="KATP" value="0.633486"/>
+            <parameter id="KPEP" name="KPEP" value="0.178991"/>
+            <parameter id="KPYR" name="KPYR" value="0.694458"/>
+            <parameter id="KaF16BP" name="KaF16BP" value="0.000223125"/>
+            <parameter id="KaSer" name="KaSer" value="4.99886"/>
+            <parameter id="Keq" name="Keq" value="111160"/>
+            <parameter id="KiATP" name="KiATP" value="0.295481"/>
+            <parameter id="L" name="L" value="2.38985"/>
+            <parameter id="Vm" name="Vm" value="4.83415"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI52" id="reaction_12" name="LDH" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI52">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-14T10:33:53Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_17" stoichiometry="1"/>
+          <speciesReference species="species_12" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_18" stoichiometry="1"/>
+          <speciesReference species="species_11" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_Law_for_LDH_1 </ci>
+                <ci> LDH_Ka </ci>
+                <ci> LDH_Kb </ci>
+                <ci> LDH_Keq </ci>
+                <ci> LDH_Kp </ci>
+                <ci> LDH_Kq </ci>
+                <ci> LDH_Vmf </ci>
+                <ci> species_11 </ci>
+                <ci> species_12 </ci>
+                <ci> species_17 </ci>
+                <ci> species_18 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="LDH_Ka" name="LDH_Ka" value="0.415824"/>
+            <parameter id="LDH_Kb" name="LDH_Kb" value="0.110429"/>
+            <parameter id="LDH_Keq" name="LDH_Keq" value="30943.3"/>
+            <parameter id="LDH_Kp" name="LDH_Kp" value="3.6647"/>
+            <parameter id="LDH_Kq" name="LDH_Kq" value="3.95248"/>
+            <parameter id="LDH_Vmf" name="LDH_Vmf" value="3.15901"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI53" id="reaction_13" name="PSA" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI53">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-14T13:02:40Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_19" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_21" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> PSA_rate_law_1 </ci>
+                <ci> KcatC </ci>
+                <ci> KmP </ci>
+                <ci> Kms </ci>
+                <ci> SerC </ci>
+                <ci> species_19 </ci>
+                <ci> species_21 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="KcatC" name="KcatC" value="1.61735"/>
+            <parameter id="KmP" name="KmP" value="0.0353101"/>
+            <parameter id="Kms" name="Kms" value="0.0590052"/>
+            <parameter id="SerC" name="SerC" value="0.0990243"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI54" id="reaction_14" name="PSP" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI54">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-14T13:21:51Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_21" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_20" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> PSP_rate_law_1 </ci>
+                <ci> KcatB </ci>
+                <ci> KmP </ci>
+                <ci> Kms </ci>
+                <ci> SerB </ci>
+                <ci> species_20 </ci>
+                <ci> species_21 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="KcatB" name="KcatB" value="1.56643"/>
+            <parameter id="KmP" name="KmP" value="0.169131"/>
+            <parameter id="Kms" name="Kms" value="0.0366311"/>
+            <parameter id="SerB" name="SerB" value="0.250189"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI55" id="reaction_15" name="SHMT" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI55">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-18T10:11:56Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_20" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_25" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> SHMT_rate_law_1 </ci>
+                <ci> KcatD </ci>
+                <ci> KmP </ci>
+                <ci> Kms </ci>
+                <ci> SerD </ci>
+                <ci> species_20 </ci>
+                <ci> species_25 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="KcatD" name="KcatD" value="17.2341"/>
+            <parameter id="KmP" name="KmP" value="0.583236"/>
+            <parameter id="Kms" name="Kms" value="0.277711"/>
+            <parameter id="SerD" name="SerD" value="0.111902"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI56" id="reaction_16" name="MCT" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI56">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-18T12:43:10Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_18" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_28" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <ci> Rate_Law_for_MCT_1 </ci>
+              <ci> MCT_Keq </ci>
+              <ci> MCT_KmP </ci>
+              <ci> MCT_KmS </ci>
+              <ci> MCT_Vmf </ci>
+              <ci> species_18 </ci>
+              <ci> species_28 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="MCT_Keq" name="MCT_Keq" value="0.940826"/>
+            <parameter id="MCT_KmP" name="MCT_KmP" value="3.68934"/>
+            <parameter id="MCT_KmS" name="MCT_KmS" value="3.66634"/>
+            <parameter id="MCT_Vmf" name="MCT_Vmf" value="1.96986"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI57" id="reaction_17" name="DHase" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI57">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-19T14:30:57Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_12" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_11" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> species_12 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> species_11 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="k1" name="k1" value="51284"/>
+            <parameter id="k2" name="k2" value="611.696"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI58" id="reaction_18" name="ATPase" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI58">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-19T14:32:04Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_3" stoichiometry="1"/>
+          <speciesReference species="species_13" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <ci> k1 </ci>
+              <ci> species_1 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="k1" name="k1" value="0.00386541"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI59" id="reaction_22" name="PPP" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI59">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-06-19T14:47:18Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_4" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_23" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Constant_flux__irreversible </ci>
+                <ci> v </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="v" name="v" value="8.90116e-05"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI60" id="reaction_25" name="PDH" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI60">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-07-24T15:15:19Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_14" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_19" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_20"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> PDH_modified_rate_law_1_1 </ci>
+                <ci> PDH_KcatA </ci>
+                <ci> PDH_KiSER </ci>
+                <ci> PDH_KmP </ci>
+                <ci> PDH_Kms </ci>
+                <ci> PDH_SerA </ci>
+                <ci> species_14 </ci>
+                <ci> species_19 </ci>
+                <ci> species_20 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="PDH_KcatA" name="PDH_KcatA" value="0.602751"/>
+            <parameter id="PDH_KiSER" name="PDH_KiSER" value="0.00481356"/>
+            <parameter id="PDH_KmP" name="PDH_KmP" value="0.00293197"/>
+            <parameter id="PDH_Kms" name="PDH_Kms" value="1.22041"/>
+            <parameter id="PDH_SerA" name="PDH_SerA" value="1.12989"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI61" id="AK" name="AK" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI61">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-26T15:31:53Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_1" stoichiometry="1"/>
+          <speciesReference species="AMP" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_3" stoichiometry="2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> species_1 </ci>
+                  <ci> AMP </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <apply>
+                    <power/>
+                    <ci> species_3 </ci>
+                    <cn> 2 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="k1" name="k1" value="1.00326"/>
+            <parameter id="k2" name="k2" value="2.17131"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI62" id="MPM" name="MPM" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI62">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-26T15:38:32Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_17" stoichiometry="1"/>
+          <speciesReference species="species_3" stoichiometry="13"/>
+          <speciesReference species="species_13" stoichiometry="13"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_1" stoichiometry="13"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_Law_for_MPM_1 </ci>
+                <ci> K </ci>
+                <ci> Keq </ci>
+                <ci> species_1 </ci>
+                <ci> species_17 </ci>
+                <ci> species_3 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="K" name="K" value="0.0119261"/>
+            <parameter id="Keq" name="Keq" value="656817000"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI63" id="SERout" name="SERout" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI63">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-26T16:27:59Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_20" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="SerineOut" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> species_20 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> SerineOut </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="k1" name="k1" value="5.10133"/>
+            <parameter id="k2" name="k2" value="4.09071"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI64" id="GLYout" name="GLYout" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI64">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-26T16:29:15Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_25" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="GlycineOut" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> species_25 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> GlycineOut </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="k1" name="k1" value="8.46116"/>
+            <parameter id="k2" name="k2" value="5.30036"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI65" id="TK" name="TK" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI65">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-27T09:32:11Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Xy5P" stoichiometry="1"/>
+          <speciesReference species="species_22" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_9" stoichiometry="1"/>
+          <speciesReference species="species_5" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Constant_flux__irreversible </ci>
+                <ci> v </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="v" name="v" value="7.93015e-05"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI66" id="PGLM" name="PGLM" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI66">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-27T09:36:06Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_4" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Glc1P" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_Law_for_PGLM_1_1 </ci>
+                <ci> Glc1P </ci>
+                <ci> PGLM_Keq </ci>
+                <ci> PGLM_Kmp </ci>
+                <ci> PGLM_Kms </ci>
+                <ci> PGLM_Vmax </ci>
+                <ci> species_4 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="PGLM_Keq" name="PGLM_Keq" value="17.3569"/>
+            <parameter id="PGLM_Kmp" name="PGLM_Kmp" value="0.0113147"/>
+            <parameter id="PGLM_Kms" name="PGLM_Kms" value="0.0397732"/>
+            <parameter id="PGLM_Vmax" name="PGLM_Vmax" value="2348.82"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI67" id="UPP" name="UPP" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI67">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-27T09:52:31Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="UTP" stoichiometry="1"/>
+          <speciesReference species="Glc1P" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="UDPG" stoichiometry="1"/>
+          <speciesReference species="PPi" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_law_for_UPP_1 </ci>
+                <ci> Glc1P </ci>
+                <ci> Keq </ci>
+                <ci> KmA </ci>
+                <ci> KmB </ci>
+                <ci> KmP </ci>
+                <ci> KmQ </ci>
+                <ci> PPi </ci>
+                <ci> UDPG </ci>
+                <ci> UTP </ci>
+                <ci> Vmax </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="0.226814"/>
+            <parameter id="KmA" name="KmA" value="0.950551"/>
+            <parameter id="KmB" name="KmB" value="0.443002"/>
+            <parameter id="KmP" name="KmP" value="0.063293"/>
+            <parameter id="KmQ" name="KmQ" value="0.346374"/>
+            <parameter id="Vmax" name="Vmax" value="176.63"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI68" id="GS" name="GS" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI68">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-27T10:21:16Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="UDPG" stoichiometry="1"/>
+          <speciesReference species="Glycogen_n" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="UDP" stoichiometry="1"/>
+          <speciesReference species="species_26" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_1"/>
+          <modifierSpeciesReference species="species_4"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_Law_for_GlycogenSyn_1 </ci>
+                <ci> GS </ci>
+                <ci> Kcat </ci>
+                <ci> KprATP </ci>
+                <ci> KptATP </ci>
+                <ci> KrATP </ci>
+                <ci> KrGlc6P </ci>
+                <ci> KtATP </ci>
+                <ci> KtGlc6P </ci>
+                <ci> Kudpg </ci>
+                <ci> L </ci>
+                <ci> UDPG </ci>
+                <ci> n </ci>
+                <ci> species_1 </ci>
+                <ci> species_4 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="GS" name="GS" value="0.003"/>
+            <parameter id="Kcat" name="Kcat" value="1246.84"/>
+            <parameter id="KprATP" name="KprATP" value="20.1587"/>
+            <parameter id="KptATP" name="KptATP" value="2.82044"/>
+            <parameter id="KrATP" name="KrATP" value="7.25412"/>
+            <parameter id="KrGlc6P" name="KrGlc6P" value="0.0842066"/>
+            <parameter id="KtATP" name="KtATP" value="2.33353"/>
+            <parameter id="KtGlc6P" name="KtGlc6P" value="0.443041"/>
+            <parameter id="Kudpg" name="Kudpg" value="0.642683"/>
+            <parameter id="L" name="L" value="0.167984"/>
+            <parameter id="n" name="n" value="4"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI69" id="GP" name="GP" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI69">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-27T11:38:04Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_26" stoichiometry="1"/>
+          <speciesReference species="species_13" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Glycogen_n" stoichiometry="1"/>
+          <speciesReference species="Glc1P" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_4"/>
+          <modifierSpeciesReference species="AMP"/>
+          <modifierSpeciesReference species="species_1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_Law_for_GP_1_1 </ci>
+                <ci> GP_KGlyb </ci>
+                <ci> GP_KGlyf </ci>
+                <ci> GP_Keq </ci>
+                <ci> GP_KiGlc1P </ci>
+                <ci> GP_KiGlyb </ci>
+                <ci> GP_KiGlyf </ci>
+                <ci> GP_Kipi </ci>
+                <ci> GP_Kpi </ci>
+                <ci> GP_Vmaxf </ci>
+                <ci> Glc1P </ci>
+                <ci> Glycogen_n </ci>
+                <ci> species_13 </ci>
+                <ci> species_26 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="GP_KGlyb" name="GP_KGlyb" value="0.128638"/>
+            <parameter id="GP_KGlyf" name="GP_KGlyf" value="1.71936"/>
+            <parameter id="GP_Keq" name="GP_Keq" value="0.335835"/>
+            <parameter id="GP_KiGlc1P" name="GP_KiGlc1P" value="10.0691"/>
+            <parameter id="GP_KiGlyb" name="GP_KiGlyb" value="5.05372"/>
+            <parameter id="GP_KiGlyf" name="GP_KiGlyf" value="8.66489"/>
+            <parameter id="GP_Kipi" name="GP_Kipi" value="7.96273"/>
+            <parameter id="GP_Kpi" name="GP_Kpi" value="4.23821"/>
+            <parameter id="GP_Vmaxf" name="GP_Vmaxf" value="32.0136"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI70" id="PPASE" name="PPASE" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI70">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-07-17T09:58:49Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="PPi" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_13" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_Law_for_PPASE_1 </ci>
+                <ci> PPASE_Km </ci>
+                <ci> PPASE_V </ci>
+                <ci> PPi </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="PPASE_Km" name="PPASE_Km" value="1.0442"/>
+            <parameter id="PPASE_V" name="PPASE_V" value="0.430184"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI71" id="NDK" name="NDK" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI71">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-07-17T10:55:32Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_1" stoichiometry="1"/>
+          <speciesReference species="UDP" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_3" stoichiometry="1"/>
+          <speciesReference species="UTP" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> Rate_Law_for_NDK_1 </ci>
+                <ci> NDK_Keq </ci>
+                <ci> NDK_KmADP </ci>
+                <ci> NDK_KmATP </ci>
+                <ci> NDK_KmUDP </ci>
+                <ci> NDK_KmUTP </ci>
+                <ci> NDK_Vmax </ci>
+                <ci> UDP </ci>
+                <ci> UTP </ci>
+                <ci> species_1 </ci>
+                <ci> species_3 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="NDK_Keq" name="NDK_Keq" value="1.76434"/>
+            <parameter id="NDK_KmADP" name="NDK_KmADP" value="0.0926443"/>
+            <parameter id="NDK_KmATP" name="NDK_KmATP" value="1.22159"/>
+            <parameter id="NDK_KmUDP" name="NDK_KmUDP" value="0.137523"/>
+            <parameter id="NDK_KmUTP" name="NDK_KmUTP" value="31.3374"/>
+            <parameter id="NDK_Vmax" name="NDK_Vmax" value="9.80464e-06"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

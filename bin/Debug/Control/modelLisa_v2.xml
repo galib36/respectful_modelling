@@ -1,0 +1,4284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by COPASI version 4.12.65 (Source) on 2014-07-11 18:29 with libSBML version 5.9.0. -->
+<sbml xmlns="http://www.sbml.org/sbml/level2" level="2" version="1">
+  <model metaid="COPASI1" id="Model_1" name="MAP-Signaling Pathway">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <pre>A model of the MAP-Kinase signalling pathway. 
+The most enzyme reactions are assumed to follow a reversible Michaelis-Menten kinetic. However the &quot;total enzyme concentration is not constant. Therefore for each reaction a forward and reverse direction is defined.</pre>
+      </body>
+    </notes>
+    <annotation>
+      <COPASI xmlns="http://www.copasi.org/static/sbml">
+        <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="#COPASI1">
+            <dcterms:created>
+              <rdf:Description>
+                <dcterms:W3CDTF>2013-10-21T14:32:03Z</dcterms:W3CDTF>
+              </rdf:Description>
+            </dcterms:created>
+          </rdf:Description>
+        </rdf:RDF>
+      </COPASI>
+    </annotation>
+    <listOfFunctionDefinitions>
+      <functionDefinition id="mass_action___reversible_1" name="mass action _ reversible_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> k1 </ci>
+            </bvar>
+            <bvar>
+              <ci> k2 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_3 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> species_1 </ci>
+                  <ci> species_2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> species_3 </ci>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="mass_action___reversible_2" name="mass action _ reversible_2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> k1 </ci>
+            </bvar>
+            <bvar>
+              <ci> k2 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_3 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_4 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_5 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> species_3 </ci>
+                  <ci> species_5 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> species_4 </ci>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__1" name="MM [2]_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_3 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_4 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_14 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_4 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_6 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> parameter_2 </ci>
+                  <ci> species_14 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_4 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_6 </ci>
+                      <ci> parameter_4 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> parameter_3 </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_4 </ci>
+                      <ci> parameter_3 </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_6 </ci>
+                      <ci> parameter_1 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__2" name="MM [2]_2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_3 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_4 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_14 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_5 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_6 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> parameter_2 </ci>
+                  <ci> species_14 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_5 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_6 </ci>
+                      <ci> parameter_4 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> parameter_3 </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_5 </ci>
+                      <ci> parameter_3 </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_6 </ci>
+                      <ci> parameter_1 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__reversible__Haldane___1___2__1" name="MM (reversible, Haldane) [1] [2]_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_18 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_19 </ci>
+            </bvar>
+            <bvar>
+              <ci> vmax </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vmax </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_19 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_18 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_19 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_18 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__3" name="MM [2]_3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_18 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_19 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_3 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_3 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_18 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_19 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_18 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_19 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__4" name="MM [2]_4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_20 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_4 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_7 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_4 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_7 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_20 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_7 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_20 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__5" name="MM [2]_5">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_20 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_7 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_8 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_8 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_20 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_7 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_20 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_7 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__6" name="MM [2]_6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_16 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_17 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_20 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_20 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_16 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_17 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_16 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_17 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__7" name="MM [2]_7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_11 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_12 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_17 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_17 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_11 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_12 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_11 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_12 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__8" name="MM [2]_8">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_12 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_13 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_30 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_12 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_13 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_30 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_13 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_30 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__reversible__Haldane___1___2__2" name="MM (reversible, Haldane) [1] [2]_2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_14 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_30 </ci>
+            </bvar>
+            <bvar>
+              <ci> vmax </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vmax </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_14 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_30 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_14 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_30 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__reversible__Haldane___1___2__3" name="MM (reversible, Haldane) [1] [2]_3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_11 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_12 </ci>
+            </bvar>
+            <bvar>
+              <ci> vmax </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vmax </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_12 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_11 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_12 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_11 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__9" name="MM [2]_9">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_15 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_19 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_21 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_19 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_15 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_21 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_15 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_21 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__10" name="MM [2]_10">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_15 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_21 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_8 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_8 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_21 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_15 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_21 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_15 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__reversible__Haldane___1___2__4" name="MM (reversible, Haldane) [1] [2]_4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_16 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_17 </ci>
+            </bvar>
+            <bvar>
+              <ci> vmax </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vmax </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_17 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_16 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_17 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_16 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__11" name="MM [2]_11">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_16 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_17 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_21 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_21 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_16 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_17 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_16 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_17 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__12" name="MM [2]_12">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_10 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_20 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_9 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_20 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_9 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_10 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_9 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_10 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__13" name="MM [2]_13">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_10 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_11 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_12 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_10 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_11 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_12 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_11 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_12 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__reversible__Haldane___1___2__5" name="MM (reversible, Haldane) [1] [2]_5">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_10 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_9 </ci>
+            </bvar>
+            <bvar>
+              <ci> vmax </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vmax </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_10 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_9 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_10 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_9 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__14" name="MM [2]_14">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_15 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_21 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_22 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_22 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_15 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_21 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_15 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_21 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__15" name="MM [2]_15">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_22 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_23 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_24 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_23 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_24 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_22 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_24 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_22 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__16" name="MM [2]_16">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_22 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_24 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_25 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_25 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_24 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_22 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_24 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_22 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__reversible__Haldane___1___2__6" name="MM (reversible, Haldane) [1] [2]_6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_22 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_24 </ci>
+            </bvar>
+            <bvar>
+              <ci> vmax </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vmax </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_22 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_24 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_22 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_24 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__17" name="MM [2]_17">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_26 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_27 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_28 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_28 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_27 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_26 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_27 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_26 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__18" name="MM [2]_18">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_25 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_26 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_27 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_25 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_27 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_26 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_27 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_26 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__reversible__Haldane___1___2__7" name="MM (reversible, Haldane) [1] [2]_7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_26 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_27 </ci>
+            </bvar>
+            <bvar>
+              <ci> vmax </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vmax </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_26 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_27 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_26 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_27 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__19" name="MM [2]_19">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_26 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_29 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_9 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_26 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_9 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_29 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_9 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_29 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__20" name="MM [2]_20">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> kcat </ci>
+            </bvar>
+            <bvar>
+              <ci> species_12 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_14 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_30 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kcat </ci>
+                  <ci> species_12 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_30 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_14 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_30 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_14 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__reversible__Haldane___1___2__8" name="MM (reversible, Haldane) [1] [2]_8">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Keq </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmp </ci>
+            </bvar>
+            <bvar>
+              <ci> Kms </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_13 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_30 </ci>
+            </bvar>
+            <bvar>
+              <ci> vmax </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vmax </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_30 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_13 </ci>
+                      <ci> Keq </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kms </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_30 </ci>
+                      <ci> Kms </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_13 </ci>
+                      <ci> Kmp </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__21" name="MM [2]_21">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_5 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_6 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_7 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_8 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_30 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_4 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_6 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> parameter_6 </ci>
+                  <ci> species_30 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_4 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_6 </ci>
+                      <ci> parameter_8 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> parameter_7 </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_4 </ci>
+                      <ci> parameter_7 </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_6 </ci>
+                      <ci> parameter_5 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="MM__2__22" name="MM [2]_22">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartment_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_5 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_6 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_7 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_8 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_30 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_5 </ci>
+            </bvar>
+            <bvar>
+              <ci> species_6 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> parameter_6 </ci>
+                  <ci> species_30 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> species_5 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> species_6 </ci>
+                      <ci> parameter_8 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> parameter_7 </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> species_5 </ci>
+                      <ci> parameter_7 </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> species_6 </ci>
+                      <ci> parameter_5 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+    </listOfFunctionDefinitions>
+    <listOfUnitDefinitions>
+      <unitDefinition id="substance" name="substance">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-6" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment metaid="COPASI2" id="compartment_1" name="Cell" spatialDimensions="3" size="1" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI2">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T14:34:48Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species metaid="COPASI3" id="species_1" name="EGF" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI3">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T14:34:59Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI4" id="species_2" name="unboundEGFR" compartment="compartment_1" initialConcentration="500000000" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI4">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T14:36:02Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI5" id="species_3" name="boundEGFR" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI5">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T14:36:26Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI6" id="species_4" name="activeSos" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI6">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T14:38:33Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI7" id="species_5" name="inactiveSos" compartment="compartment_1" initialConcentration="1200000000" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI7">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T14:38:54Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI8" id="species_6" name="removedSos" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI8">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T14:26:24Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI9" id="species_7" name="inactiveRas" compartment="compartment_1" initialConcentration="1200000000" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI9">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T15:36:50Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI10" id="species_8" name="GAP" compartment="compartment_1" initialConcentration="2400000000" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI10">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T15:26:56Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI11" id="species_9" name="Raf-1" compartment="compartment_1" initialConcentration="1500000000" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI11">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T14:05:38Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI12" id="species_10" name="Raf-1PP" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI12">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T14:05:44Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI13" id="species_11" name="MEK" compartment="compartment_1" initialConcentration="3000000000" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI13">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T14:54:18Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI14" id="species_12" name="MEKPP" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI14">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T15:36:53Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI15" id="species_13" name="ERK" compartment="compartment_1" initialConcentration="10000000000" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI15">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T14:43:16Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI16" id="species_14" name="ERKPP" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI16">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T14:43:35Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI17" id="species_15" name="inactiveRap1" compartment="compartment_1" initialConcentration="1200000000" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI17">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T14:45:49Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI18" id="species_16" name="BRaf" compartment="compartment_1" initialConcentration="1500000000" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI18">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T15:36:16Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI19" id="species_17" name="BRafPP" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI19">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T15:36:17Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI20" id="species_18" name="inactiveC3G" compartment="compartment_1" initialConcentration="1200000000" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI20">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T15:36:39Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI21" id="species_19" name="activeC3G" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI21">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T14:47:02Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI22" id="species_20" name="activeRas" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI22">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T09:36:42Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI23" id="species_21" name="activeRap1" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI23">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T09:36:27Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI24" id="species_22" name="EPAC" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI24">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-01-13T12:52:09Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI25" id="species_23" name="EPACA" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI25">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-01-13T12:52:44Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI26" id="species_24" name="inactiveEPAC" compartment="compartment_1" initialConcentration="1000000000" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI26">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-01-13T12:54:23Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI27" id="species_25" name="Cilostamide" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI27">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-01-13T12:51:49Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI28" id="species_26" name="activePKA" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI28">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-01-13T12:41:54Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI29" id="species_27" name="inactivePKA" compartment="compartment_1" initialConcentration="1000000000" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI29">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-01-13T12:54:44Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI30" id="species_28" name="PKAA" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI30">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-01-13T12:56:49Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species metaid="COPASI31" id="species_29" name="removedRaf1" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI31">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-29T14:52:16Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </species>
+      <species id="species_30" name="ERKP" compartment="compartment_1" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter metaid="COPASI32" id="parameter_1" name="Sos_removedKm ErkPP" value="623.2" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI32">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-29T14:59:15Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI33" id="parameter_2" name="SosKcat ErkPP" value="31.6" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI33">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-29T14:59:45Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI34" id="parameter_3" name="Sos_active&amp;inactiveKm ErkPP" value="656" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI34">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-29T15:01:07Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI35" id="parameter_4" name="SosKeq ErkPP" value="177" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI35">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-29T15:01:25Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI36" id="parameter_5" name="Sos_removedKm ErkP" value="2660" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI36">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-01-24T13:11:01Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter id="parameter_6" name="SosKcat ErkP" value="3.88" constant="true"/>
+      <parameter metaid="COPASI37" id="parameter_7" name="Sos_active&amp;inactiveKm ErkP" value="2800" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI37">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-03-04T11:02:10Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter id="parameter_8" name="SosKeq ErkP" value="177" constant="true"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction metaid="COPASI38" id="reaction_1" name="EGF_Binding" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI38">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T14:37:04Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_1" stoichiometry="1"/>
+          <speciesReference species="species_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_3" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> mass_action___reversible_1 </ci>
+                <ci> compartment_1 </ci>
+                <ci> k1 </ci>
+                <ci> k2 </ci>
+                <ci> species_1 </ci>
+                <ci> species_2 </ci>
+                <ci> species_3 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="k1" name="k1" value="0.870523726306707"/>
+            <parameter id="k2" name="k2" value="0.0020630436166253"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI39" id="reaction_2" name="Sos_Binding" reversible="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>The activation of Sos is mainly due to the localication of Sos to the membrane.
+
+There is an allosteric activation of Ras.
+
+Jun, J. Regulation of Ras Exchange Factors and Cellular Localization of Ras Activation by Lipid Messengers in T Cells, Front Immunol. 2013; 4: 239. 
+
+Boriack-Sjodin, P. Ann et al. ; The structural basis of the activation of Ras by Sos, Nature 394, 337-343 (23 July 1998)
+
+
+&quot;Since the recruitment of the GRBZIDrk-Sos complex to the receptor appears to serve as the mechanism for the activation of SOS&quot; ; Bar-Agi, The Sos (Son of sevenless) protein, Cell, Volume 5, Issue 4, May–June 1994, Pages 165–169</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI39">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T14:48:46Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_3" stoichiometry="1"/>
+          <speciesReference species="species_5" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_4" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> mass_action___reversible_2 </ci>
+                <ci> compartment_1 </ci>
+                <ci> k1 </ci>
+                <ci> k2 </ci>
+                <ci> species_3 </ci>
+                <ci> species_4 </ci>
+                <ci> species_5 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="k1" name="k1" value="108.717225277485"/>
+            <parameter id="k2" name="k2" value="0.136923432869645"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI40" id="reaction_3" name="Sos_Removal (activeSos) ERKPP" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI40">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T14:51:31Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_4" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_6" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_14"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__1 </ci>
+                <ci> compartment_1 </ci>
+                <ci> parameter_1 </ci>
+                <ci> parameter_2 </ci>
+                <ci> parameter_3 </ci>
+                <ci> parameter_4 </ci>
+                <ci> species_14 </ci>
+                <ci> species_4 </ci>
+                <ci> species_6 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="parameter_1" name="parameter_1" value="0.136923432869645"/>
+            <parameter id="parameter_2" name="parameter_2" value="0.136923432869645"/>
+            <parameter id="parameter_3" name="parameter_3" value="0.136923432869645"/>
+            <parameter id="parameter_4" name="parameter_4" value="0.136923432869645"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI41" id="reaction_4" name="Sos_Removal (inactiveSos) ERKPP" reversible="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Enzyme is ERKPP</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI41">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T15:09:18Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_5" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_6" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_14"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__2 </ci>
+                <ci> compartment_1 </ci>
+                <ci> parameter_1 </ci>
+                <ci> parameter_2 </ci>
+                <ci> parameter_3 </ci>
+                <ci> parameter_4 </ci>
+                <ci> species_14 </ci>
+                <ci> species_5 </ci>
+                <ci> species_6 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="parameter_1" name="parameter_1" value="0.136923432869645"/>
+            <parameter id="parameter_2" name="parameter_2" value="0.136923432869645"/>
+            <parameter id="parameter_3" name="parameter_3" value="0.136923432869645"/>
+            <parameter id="parameter_4" name="parameter_4" value="0.136923432869645"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI42" id="reaction_5" name="C3G_Inactivation" reversible="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Hypermethylation causes an inactivation and leads to cervical cancer.
+
+-&gt; methylation as inactivation process
+
+Inactivation of Crk SH3 domain-binding guanine nucleotide-releasing factor (C3G) in cervical squamous cell carcinoma. Okino, K., Nagai, H., Nakayama, H., Doi, D., Yoneyama, K., Konishi, H., Takeshita, T. Int. J. Gynecol. Cancer (2006) [Pubmed]</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI42">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T15:10:37Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_19" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_18" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__reversible__Haldane___1___2__1 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> species_18 </ci>
+                <ci> species_19 </ci>
+                <ci> vmax </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="59.3534007884084"/>
+            <parameter id="Kmp" name="Kmp" value="3738.89749049655"/>
+            <parameter id="Kms" name="Kms" value="3584.11689890278"/>
+            <parameter id="vmax" name="vmax" value="686982948.801758"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI43" id="reaction_6" name="C3G_Activation" reversible="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>EGFR binding recuits C3G to the membrane, where it can activate Rap</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI43">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T15:12:11Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_18" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_19" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_3"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__3 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_18 </ci>
+                <ci> species_19 </ci>
+                <ci> species_3 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="131.968774398611"/>
+            <parameter id="Kmp" name="Kmp" value="0.928538951486952"/>
+            <parameter id="Kms" name="Kms" value="0.23687486967535"/>
+            <parameter id="kcat" name="kcat" value="49.2932423628257"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI44" id="reaction_7" name="Ras_Activation " reversible="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>The activation of Sos is mainly due to the localication of Sos to the membrane.
+
+There is an allosteric activation of Ras.
+
+Jun, J. Regulation of Ras Exchange Factors and Cellular Localization of Ras Activation by Lipid Messengers in T Cells, Front Immunol. 2013; 4: 239. 
+
+Boriack-Sjodin, P. Ann et al. ; The structural basis of the activation of Ras by Sos, Nature 394, 337-343 (23 July 1998)
+
+allosteric modulation kinetic
+
+Groebe D., Screening for positive allosteric modulators of biological targets, Volume 11, Issues 13–14, July 2006, Pages 632–639
+
+J., MONOD, J. WYMAN AND J. P. CHANGEUX, On the Nature of Allosteric Transitions : A Plausible Model; J. Mol. Biol. (1965) 12, 88-118
+
+http://www.biophysik.ovgu.de/biophysik_media/Downloads/Versuchsanleitungen/bpp_glyko_2012_09.pdf
+(allosterische Modulation allgemein)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI44">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T15:16:06Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_7" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_20" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_4"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__4 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_20 </ci>
+                <ci> species_4 </ci>
+                <ci> species_7 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="2.79050202163604"/>
+            <parameter id="Kmp" name="Kmp" value="5151612500.00001"/>
+            <parameter id="Kms" name="Kms" value="5422749999.99999"/>
+            <parameter id="kcat" name="kcat" value="0.865843620733591"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI45" id="reaction_8" name="Ras_Inactivation " reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI45">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T15:25:51Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_20" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_7" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_8"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__5 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_20 </ci>
+                <ci> species_7 </ci>
+                <ci> species_8 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="2.8319439498919"/>
+            <parameter id="Kmp" name="Kmp" value="2.13161413745002"/>
+            <parameter id="Kms" name="Kms" value="3.52053701944757"/>
+            <parameter id="kcat" name="kcat" value="9.44250927924945"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI46" id="reaction_9" name="BRaf_Phosphorylation (Ras)" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI46">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T15:27:06Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_16" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_17" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_20"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__6 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_16 </ci>
+                <ci> species_17 </ci>
+                <ci> species_20 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="174.203315971378"/>
+            <parameter id="Kmp" name="Kmp" value="10742001918.0171"/>
+            <parameter id="Kms" name="Kms" value="3637326955.57601"/>
+            <parameter id="kcat" name="kcat" value="21.1369309747787"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI47" id="reaction_10" name="MEK_Phosphorylation (BRafPP)" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI47">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T15:30:49Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_11" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_12" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_17"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__7 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_11 </ci>
+                <ci> species_12 </ci>
+                <ci> species_17 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="185.221035726684"/>
+            <parameter id="Kmp" name="Kmp" value="0.469435541959134"/>
+            <parameter id="Kms" name="Kms" value="0.603893281074446"/>
+            <parameter id="kcat" name="kcat" value="0.251681471670978"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI48" id="reaction_11" name="ERK_Phosphorylation1 " reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI48">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T18:04:16Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_13" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_30" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_12"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__8 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_12 </ci>
+                <ci> species_13 </ci>
+                <ci> species_30 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="165.99540781481"/>
+            <parameter id="Kmp" name="Kmp" value="0.490365386121862"/>
+            <parameter id="Kms" name="Kms" value="0.515636735188085"/>
+            <parameter id="kcat" name="kcat" value="0.149529509002785"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI49" id="reaction_12" name="ERKPP_Dephosphorylation1" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI49">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T18:05:40Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_14" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_30" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__reversible__Haldane___1___2__2 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> species_14 </ci>
+                <ci> species_30 </ci>
+                <ci> vmax </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="191.107001752676"/>
+            <parameter id="Kmp" name="Kmp" value="1.37655663553696"/>
+            <parameter id="Kms" name="Kms" value="1.44168176272316"/>
+            <parameter id="vmax" name="vmax" value="0.00184090712192114"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI50" id="reaction_13" name="MEKPP_Dephosphorylation" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI50">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T18:10:37Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_12" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_11" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__reversible__Haldane___1___2__3 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> species_11 </ci>
+                <ci> species_12 </ci>
+                <ci> vmax </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="154.970942309144"/>
+            <parameter id="Kmp" name="Kmp" value="3566.1704668666"/>
+            <parameter id="Kms" name="Kms" value="3687.33080236971"/>
+            <parameter id="vmax" name="vmax" value="1325353652.89778"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI51" id="reaction_14" name="Rap1_Activation (C3G)" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI51">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T18:17:09Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_15" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_21" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_19"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__9 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_15 </ci>
+                <ci> species_19 </ci>
+                <ci> species_21 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="4.00272386403643"/>
+            <parameter id="Kmp" name="Kmp" value="27.9187617501744"/>
+            <parameter id="Kms" name="Kms" value="19.4037300668429"/>
+            <parameter id="kcat" name="kcat" value="0.000602431835557561"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI52" id="reaction_15" name="Rap1_Inactivation" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI52">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-21T18:23:25Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_21" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_15" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_8"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__10 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_15 </ci>
+                <ci> species_21 </ci>
+                <ci> species_8 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="3.14924843804497"/>
+            <parameter id="Kmp" name="Kmp" value="1.38337441700768"/>
+            <parameter id="Kms" name="Kms" value="7.18267819424479"/>
+            <parameter id="kcat" name="kcat" value="7.73264261065814"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI53" id="reaction_16" name="BRaf_Inactivation" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI53">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T10:12:06Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_17" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_16" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__reversible__Haldane___1___2__4 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> species_16 </ci>
+                <ci> species_17 </ci>
+                <ci> vmax </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="175.674064715014"/>
+            <parameter id="Kmp" name="Kmp" value="3582.32376105782"/>
+            <parameter id="Kms" name="Kms" value="3801.01344981406"/>
+            <parameter id="vmax" name="vmax" value="19646338.0457866"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI54" id="reaction_17" name="BRaf_Phosphorylation (Rap1)" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI54">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T13:58:48Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_16" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_17" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_21"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__11 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_16 </ci>
+                <ci> species_17 </ci>
+                <ci> species_21 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="187.549294979291"/>
+            <parameter id="Kmp" name="Kmp" value="9166540427.36053"/>
+            <parameter id="Kms" name="Kms" value="6225813819.37482"/>
+            <parameter id="kcat" name="kcat" value="168257.337852615"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI55" id="reaction_18" name="Raf1_Activation " reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI55">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T14:09:03Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_9" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_10" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_20"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__12 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_10 </ci>
+                <ci> species_20 </ci>
+                <ci> species_9 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="188.723207268319"/>
+            <parameter id="Kmp" name="Kmp" value="2812128493.30106"/>
+            <parameter id="Kms" name="Kms" value="7570630182.03802"/>
+            <parameter id="kcat" name="kcat" value="3438.99163366837"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI56" id="reaction_19" name="MEK_Phosphorylation (Raf-1PP)" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI56">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T14:12:56Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_11" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_12" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_10"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__13 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_10 </ci>
+                <ci> species_11 </ci>
+                <ci> species_12 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="176.465421760877"/>
+            <parameter id="Kmp" name="Kmp" value="0.681532621769909"/>
+            <parameter id="Kms" name="Kms" value="0.835424721752486"/>
+            <parameter id="kcat" name="kcat" value="0.24797046382633"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI57" id="reaction_20" name="Raf1PP_Inactivation" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI57">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-22T14:46:04Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_10" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_9" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__reversible__Haldane___1___2__5 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> species_10 </ci>
+                <ci> species_9 </ci>
+                <ci> vmax </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="159.147887940029"/>
+            <parameter id="Kmp" name="Kmp" value="3650.40437015263"/>
+            <parameter id="Kms" name="Kms" value="3960.57045488725"/>
+            <parameter id="vmax" name="vmax" value="11000575125.2673"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI58" id="reaction_21" name="Rap1-Activation (EPAC)" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI58">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-23T13:04:19Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_15" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_21" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_22"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__14 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_15 </ci>
+                <ci> species_21 </ci>
+                <ci> species_22 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="2.94784506256184"/>
+            <parameter id="Kmp" name="Kmp" value="17.9573462624834"/>
+            <parameter id="Kms" name="Kms" value="21.2781934960694"/>
+            <parameter id="kcat" name="kcat" value="0.000954893760821192"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI59" id="reaction_22" name="EPAC_Activation (EPACA)" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI59">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-23T13:06:11Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_24" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_22" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_23"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__15 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_22 </ci>
+                <ci> species_23 </ci>
+                <ci> species_24 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="1.58259566525051"/>
+            <parameter id="Kmp" name="Kmp" value="19.4082803655122"/>
+            <parameter id="Kms" name="Kms" value="9.09243210017664"/>
+            <parameter id="kcat" name="kcat" value="10.1745411732294"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI60" id="reaction_23" name="EPAC_Activation (Cilostamide)" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI60">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-23T13:08:12Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_24" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_22" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_25"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__16 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_22 </ci>
+                <ci> species_24 </ci>
+                <ci> species_25 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="9699870000"/>
+            <parameter id="Kmp" name="Kmp" value="10000000000"/>
+            <parameter id="Kms" name="Kms" value="9214876499.99999"/>
+            <parameter id="kcat" name="kcat" value="9.34508"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI61" id="reaction_24" name="EPAC_Inactivation" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI61">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-23T13:09:39Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_22" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_24" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__reversible__Haldane___1___2__6 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> species_22 </ci>
+                <ci> species_24 </ci>
+                <ci> vmax </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="1.82898955805548"/>
+            <parameter id="Kmp" name="Kmp" value="7722.39764388436"/>
+            <parameter id="Kms" name="Kms" value="8537.9487092261"/>
+            <parameter id="vmax" name="vmax" value="167880169.461912"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI62" id="reaction_25" name="PKA_Activation (PKAA)" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI62">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-23T13:10:48Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_27" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_26" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_28"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__17 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_26 </ci>
+                <ci> species_27 </ci>
+                <ci> species_28 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="1.73328000155617"/>
+            <parameter id="Kmp" name="Kmp" value="3.08231437147997"/>
+            <parameter id="Kms" name="Kms" value="10.8209959801102"/>
+            <parameter id="kcat" name="kcat" value="0.133364358311499"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI63" id="reaction_26" name="PKA_Activation (Cilostamide)" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI63">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-23T13:11:29Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_27" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_26" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_25"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__18 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_25 </ci>
+                <ci> species_26 </ci>
+                <ci> species_27 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="10000000000"/>
+            <parameter id="Kmp" name="Kmp" value="2947194500"/>
+            <parameter id="Kms" name="Kms" value="3102310000"/>
+            <parameter id="kcat" name="kcat" value="1.6605"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI64" id="reaction_27" name="PKA_Inactivation" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI64">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-23T13:12:12Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_26" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_27" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__reversible__Haldane___1___2__7 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> species_26 </ci>
+                <ci> species_27 </ci>
+                <ci> vmax </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="0.806640106913749"/>
+            <parameter id="Kmp" name="Kmp" value="11949203284.9318"/>
+            <parameter id="Kms" name="Kms" value="21074347620.3837"/>
+            <parameter id="vmax" name="vmax" value="97515468020.0669"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI65" id="reaction_28" name="Raf1_Removal" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI65">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2013-10-23T13:14:32Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_9" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_29" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_26"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__19 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_26 </ci>
+                <ci> species_29 </ci>
+                <ci> species_9 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="161.207870313502"/>
+            <parameter id="Kmp" name="Kmp" value="31.0245073380677"/>
+            <parameter id="Kms" name="Kms" value="33.6863576393984"/>
+            <parameter id="kcat" name="kcat" value="2.84401281388926"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI66" id="reaction_29" name="ERK_Phosphorylation2 " reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI66">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-01-24T12:57:44Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_30" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_14" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_12"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__20 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> kcat </ci>
+                <ci> species_12 </ci>
+                <ci> species_14 </ci>
+                <ci> species_30 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="168.262761083039"/>
+            <parameter id="Kmp" name="Kmp" value="0.0463557469110474"/>
+            <parameter id="Kms" name="Kms" value="0.0503077163728896"/>
+            <parameter id="kcat" name="kcat" value="0.15137809466109"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI67" id="reaction_30" name="ERKPP_Dephosphorylation2" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI67">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-01-24T12:58:32Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_30" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_13" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__reversible__Haldane___1___2__8 </ci>
+                <ci> Keq </ci>
+                <ci> Kmp </ci>
+                <ci> Kms </ci>
+                <ci> compartment_1 </ci>
+                <ci> species_13 </ci>
+                <ci> species_30 </ci>
+                <ci> vmax </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="Keq" name="Keq" value="1.41641832532982"/>
+            <parameter id="Kmp" name="Kmp" value="184.025914508611"/>
+            <parameter id="Kms" name="Kms" value="1.813444582083"/>
+            <parameter id="vmax" name="vmax" value="0.277470953360691"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI68" id="reaction_31" name="Sos_Removal (activeSos) ERKP" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI68">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-01-24T13:06:55Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_4" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_6" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_30"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__21 </ci>
+                <ci> compartment_1 </ci>
+                <ci> parameter_5 </ci>
+                <ci> parameter_6 </ci>
+                <ci> parameter_7 </ci>
+                <ci> parameter_8 </ci>
+                <ci> species_30 </ci>
+                <ci> species_4 </ci>
+                <ci> species_6 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="parameter_5" name="parameter_5" value="184.025914508611"/>
+            <parameter id="parameter_6" name="parameter_6" value="184.025914508611"/>
+            <parameter id="parameter_7" name="parameter_7" value="184.025914508611"/>
+            <parameter id="parameter_8" name="parameter_8" value="184.025914508611"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI69" id="reaction_32" name="Sos_Removal (inactiveSos) ERKP" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI69">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-01-24T13:07:45Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="species_5" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="species_6" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="species_30"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment_1 </ci>
+              <apply>
+                <ci> MM__2__22 </ci>
+                <ci> compartment_1 </ci>
+                <ci> parameter_5 </ci>
+                <ci> parameter_6 </ci>
+                <ci> parameter_7 </ci>
+                <ci> parameter_8 </ci>
+                <ci> species_30 </ci>
+                <ci> species_5 </ci>
+                <ci> species_6 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="parameter_5" name="parameter_5" value="184.025914508611"/>
+            <parameter id="parameter_6" name="parameter_6" value="184.025914508611"/>
+            <parameter id="parameter_7" name="parameter_7" value="184.025914508611"/>
+            <parameter id="parameter_8" name="parameter_8" value="184.025914508611"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

@@ -1,0 +1,210 @@
+
+ Iteration No. 0==========================
+
+Try Newton's method. 
+   Starting Newton Iterations...
+    Regular Newton step.      New value: 0.171655
+    Regular Newton step.      New value: 1.27353e-14
+   Success: Target criterium matched by 1.27353e-14.
+   Do additional step to refine result...
+    Regular Newton step.      New value: 4.3914e-16
+
+ Iteration No. 1==========================
+
+Try Newton's method. 
+   Starting Newton Iterations...
+    Newton step failed. Negative volume or concentration found.
+
+
+Try forward integration. 
+  Integration with duration 0.1. Criterium not matched by 2.66795.
+
+  Try Newton's method from this starting point. 
+   Starting Newton Iterations...
+    Newton step failed. Negative volume or concentration found.
+
+
+  Integration with duration 1. Criterium not matched by 0.799234.
+
+  Try Newton's method from this starting point. 
+   Starting Newton Iterations...
+    Regular Newton step.      New value: 0.324195
+    Regular Newton step.      New value: 4.52714e-15
+   Success: Target criterium matched by 4.52714e-15.
+   Do additional step to refine result...
+    Regular Newton step.      New value: 0
+
+
+ Iteration No. 2==========================
+
+Try Newton's method. 
+   Starting Newton Iterations...
+    Newton step failed. Negative volume or concentration found.
+
+
+Try forward integration. 
+  Integration with duration 0.1. Criterium not matched by 3.40266.
+
+  Try Newton's method from this starting point. 
+   Starting Newton Iterations...
+    Newton step failed. Negative volume or concentration found.
+
+
+  Integration with duration 1. Criterium not matched by 0.806732.
+
+  Try Newton's method from this starting point. 
+   Starting Newton Iterations...
+    Regular Newton step.      New value: 0.0819114
+    Regular Newton step.      New value: 1.11044e-14
+   Success: Target criterium matched by 1.11044e-14.
+   Do additional step to refine result...
+    Regular Newton step.      New value: 1.70817e-16
+
+
+ Iteration No. 3==========================
+
+Try Newton's method. 
+   Starting Newton Iterations...
+    Newton step failed. Negative volume or concentration found.
+
+
+Try forward integration. 
+  Integration with duration 0.1. Criterium not matched by 0.676981.
+
+  Try Newton's method from this starting point. 
+   Starting Newton Iterations...
+    Newton step with damping. New value: 0.617245 (1 damping iteration(s))
+    Regular Newton step.      New value: 0.56516
+    Regular Newton step.      New value: 1.01409e-13
+   Success: Target criterium matched by 1.01409e-13.
+   Do additional step to refine result...
+    Regular Newton step.      New value: 1.22623e-16
+
+
+ Iteration No. 4==========================
+
+Try Newton's method. 
+   Starting Newton Iterations...
+    Newton step failed. Negative volume or concentration found.
+
+
+Try forward integration. 
+  Integration with duration 0.1. Criterium not matched by 3.44332.
+
+  Try Newton's method from this starting point. 
+   Starting Newton Iterations...
+    Newton step failed. Negative volume or concentration found.
+
+
+  Integration with duration 1. Criterium not matched by 0.877205.
+
+  Try Newton's method from this starting point. 
+   Starting Newton Iterations...
+    Regular Newton step.      New value: 0.214727
+    Regular Newton step.      New value: 5.75736e-15
+   Success: Target criterium matched by 5.75736e-15.
+   Do additional step to refine result...
+    Regular Newton step.      New value: 3.7125e-16
+
+
+ Iteration No. 5==========================
+
+Try Newton's method. 
+   Starting Newton Iterations...
+    Newton step failed. Negative volume or concentration found.
+
+
+Try forward integration. 
+  Integration with duration 0.1. Criterium not matched by 4.01526.
+
+  Try Newton's method from this starting point. 
+   Starting Newton Iterations...
+    Newton step failed. Negative volume or concentration found.
+
+
+  Integration with duration 1. Criterium not matched by 0.720313.
+
+  Try Newton's method from this starting point. 
+   Starting Newton Iterations...
+    Regular Newton step.      New value: 0.143261
+    Regular Newton step.      New value: 6.9339e-15
+   Success: Target criterium matched by 6.9339e-15.
+   Do additional step to refine result...
+    Regular Newton step.      New value: 0
+
+
+ Iteration No. 6==========================
+
+Try Newton's method. 
+   Starting Newton Iterations...
+    Newton step failed. Negative volume or concentration found.
+
+
+Try forward integration. 
+  Integration with duration 0.1. Criterium not matched by 3.22249.
+
+  Try Newton's method from this starting point. 
+   Starting Newton Iterations...
+    Newton step failed. Negative volume or concentration found.
+
+
+  Integration with duration 1. Criterium not matched by 0.753392.
+
+  Try Newton's method from this starting point. 
+   Starting Newton Iterations...
+    Regular Newton step.      New value: 0.248937
+    Regular Newton step.      New value: 2.55153e-15
+   Success: Target criterium matched by 2.55153e-15.
+   Do additional step to refine result...
+    Regular Newton step.      New value: 4.37583e-16
+
+
+ Iteration No. 7==========================
+
+Try Newton's method. 
+   Starting Newton Iterations...
+    Newton step failed. Negative volume or concentration found.
+
+
+Try forward integration. 
+  Integration with duration 0.1. Criterium not matched by 1.8754.
+
+  Try Newton's method from this starting point. 
+   Starting Newton Iterations...
+    Newton step with damping. New value: 0.578774 (1 damping iteration(s))
+    Regular Newton step.      New value: 0.175689
+    Regular Newton step.      New value: 6.84842e-15
+   Success: Target criterium matched by 6.84842e-15.
+   Do additional step to refine result...
+    Regular Newton step.      New value: 1.42675e-16
+
+
+ Iteration No. 8==========================
+
+Try Newton's method. 
+   Starting Newton Iterations...
+    Regular Newton step.      New value: 0.196473
+    Regular Newton step.      New value: 4.56151e-14
+   Success: Target criterium matched by 4.56151e-14.
+   Do additional step to refine result...
+    Regular Newton step.      New value: 0
+
+ Iteration No. 9==========================
+
+Try Newton's method. 
+   Starting Newton Iterations...
+    Newton step failed. Negative volume or concentration found.
+
+
+Try forward integration. 
+  Integration with duration 0.1. Criterium not matched by 1.52137.
+
+  Try Newton's method from this starting point. 
+   Starting Newton Iterations...
+    Newton step with damping. New value: 0.826669 (1 damping iteration(s))
+    Regular Newton step.      New value: 0.433938
+    Regular Newton step.      New value: 5.15116e-14
+   Success: Target criterium matched by 5.15116e-14.
+   Do additional step to refine result...
+    Regular Newton step.      New value: 3.16993e-16
+
